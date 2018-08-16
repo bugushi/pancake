@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Link } from 'react-router-dom';
 
-import './style.scss';
+import './style.css';
 import Routes from './Routes';
 import { Provider, createStore } from './context';
 import reactLogo from './assets/React-icon.png';
@@ -25,7 +25,7 @@ class App extends React.Component {
           <main className="container">
             <div>
               <h1>hello world!</h1>
-              <img className="container__image" alt="react logo" src={reactLogo} />
+              <img className="image" alt="react logo" src={reactLogo} />
               <p>准备就绪!!!</p>
             </div>
             <ul className="left">

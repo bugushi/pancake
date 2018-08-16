@@ -29,8 +29,20 @@ module.exports = {
         loaders: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader',
+        test: /\.css$/,
+        use: [
+          'style-loader', // 注入css内容到html中或者引入处
+          'css-loader', // 处理@import 或 url()等
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('precss')(), // 类sass，包含postcss-preset-env, preset-env包含autoprefixer
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -45,8 +57,8 @@ module.exports = {
     extensions: ['.js', '.jsx'], // import时可省略js,jsx
   },
   output: {
-    filename: '[name].[hash].bundle.js',
-    chunkFilename: '[name].[chunkhash].bundle.js',
+    filename: '[name].[hash].bundle.js', // 入口文件hash
+    chunkFilename: '[name].[chunkhash].bundle.js', // 内部import文件的hash
     path: path.join(__dirname, destDir),
   },
   watchOptions: {
