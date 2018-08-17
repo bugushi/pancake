@@ -13,7 +13,7 @@ A simple React boilerplate
 > compiles to `/dist` folder and uglify in `production` mode 
 
 - Babel
-- use Postcss instead of Sass
+- use `Postcss` instead of `Sass`, support `px` to `vw`
 - Airbnb eslint
 
 ### Dependencies
@@ -37,6 +37,7 @@ babel-preset-env | babelrc | equivalent to `babel-preset-latest`, compilations o
 babel-preset-react | babel | compile react
 precss | postcss | support sass-like syntax
 cssnano | postcss | css minifier
+postcss-px-to-viewport | postcss | px to vw
 eslint | eslint | 
 babel-eslint | eslint | used as parser in `.eslintrc` file
 eslint-config-airbnb | eslint | eslint standard of airbnb
