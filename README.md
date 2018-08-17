@@ -25,7 +25,6 @@ babel-loader | webpack | compile js or jsx
 css-loader | webpack | Interprets @import and url() like import/require() and will resolve them
 style-loader | webpack | Adds CSS to the DOM by injecting a style tag
 postcss-loader | webpack | webpack loader of postcss
-precss | postcss | webpack plugin support sass syntax
 file-loader | webpack | handle assets such as images, contains `url-loader`
 url-loader | webpack | peerdependency of `file-loader`
 html-webpack-plugin | webpack | inject bundle js to html file
@@ -36,6 +35,8 @@ babel-core | babelrc |
 babel-plugin-syntax-dynamic-import | babelrc | compile dynamic import which build in webpack
 babel-preset-env | babelrc | equivalent to `babel-preset-latest`, compilations of es2015, es2016 and es2017
 babel-preset-react | babel | compile react
+precss | postcss | support sass-like syntax
+cssnano | postcss | css minifier
 eslint | eslint | 
 babel-eslint | eslint | used as parser in `.eslintrc` file
 eslint-config-airbnb | eslint | eslint standard of airbnb

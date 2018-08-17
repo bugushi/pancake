@@ -39,6 +39,7 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 require('precss')(), // 类sass，包含postcss-preset-env, preset-env包含autoprefixer
+                require('cssnano')()
               ]
             }
           }
