@@ -3,6 +3,10 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const precss = require('precss');
+const cssnano = require('cssnano');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+
 const destDir = process.env.NODE_ENV === 'production' ? '/dist' : '/static';
 
 module.exports = {
@@ -38,8 +42,12 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: () => [
-                require('precss')(), // 类sass，包含postcss-preset-env, preset-env包含autoprefixer
-                require('cssnano')()
+                precss(), // sass-like，contains `postcss-preset-env` which contains `autoprefixer`
+                cssnano(), // minify css
+                postcssPxToViewport({
+                  viewportWidth: 750,
+                  selectorBlackList: ['.ignore', '.hairlines']
+                })
               ]
             }
           }
