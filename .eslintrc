@@ -11,6 +11,9 @@
     "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-filename-extension": "off",
     "comma-dangle": "off",
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "react/no-did-mount-set-state": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }

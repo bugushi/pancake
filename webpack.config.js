@@ -36,7 +36,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader', // 注入css内容到html中或者引入处
-          'css-loader', // 处理@import 或 url()等
+          {
+            loader: 'css-loader', // 处理@import 或 url()等
+            options: {
+              modules: true,
+              localIdentName: '[local]__[hash:base64:5]'
+            }
+          },
           {
             loader: 'postcss-loader',
             options: {

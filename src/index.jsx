@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Link } from 'react-router-dom';
 
-import './style.css';
+import styles from './style.css';
 import Routes from './Routes';
 import { Provider, createStore } from './context';
 import reactLogo from './assets/React-icon.png';
@@ -22,18 +22,21 @@ class App extends React.Component {
     return (
       <Provider>
         <HashRouter>
-          <main className="container">
+          <main className={styles.container}>
             <div>
               <h1>hello world!</h1>
-              <img className="image" alt="react logo" src={reactLogo} />
+              <img className={styles.image} alt="react logo" src={reactLogo} />
               <p>准备就绪!!!</p>
             </div>
-            <ul className="left">
+            <ul className={styles.nav}>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/todoList">待办事项</Link>
               </li>
             </ul>
             <Routes />

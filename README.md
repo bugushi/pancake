@@ -2,9 +2,11 @@
 
 A simple React boilerplate
 
-### Elements
+### introduce
 - state management with `React Context API` instead of `Redux`
 - React Router V4 with dynamic imports
+- use `Postcss` instead of `Sass`, support `px` to `vw`
+- use css module by `css-loader` of webpack
 - Webpack 4.0
 > no local server, develop with charles proxy
 
@@ -13,7 +15,6 @@ A simple React boilerplate
 > compiles to `/dist` folder and uglify in `production` mode 
 
 - Babel
-- use `Postcss` instead of `Sass`, support `px` to `vw`
 - Airbnb eslint
 
 ### Dependencies
@@ -22,7 +23,7 @@ name | domain | description
 webpack | webpack | 
 webpack-cli | webpack | offer `webpack` command in package.json
 babel-loader | webpack | compile js or jsx
-css-loader | webpack | Interprets @import and url() like import/require() and will resolve them
+css-loader | webpack | Interprets @import and url() like import/require() and will resolve them. open css module
 style-loader | webpack | Adds CSS to the DOM by injecting a style tag
 postcss-loader | webpack | webpack loader of postcss
 file-loader | webpack | handle assets such as images, contains `url-loader`
